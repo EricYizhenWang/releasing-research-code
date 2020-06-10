@@ -1,20 +1,14 @@
-> 📋A template README.md for code accompanying a Machine Learning paper
+# Robust Learning against Logical Adversaries
 
-# My Paper Title
-
-This repository is the official implementation of [My Paper Title](https://arxiv.org/abs/2030.12345). 
-
-> 📋Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
+This repository is the official implementation of Neurips 2020 Submission 8862.
 
 ## Requirements
 
-To install requirements:
+There are two main requirements to run the code -- setting up the environment and obtaining data set.
 
-```setup
-pip install -r requirements.txt
-```
+To setup the necessary dependencies, please use anaconda to install the packages specified in environment file nn_mal.yml
 
-> 📋Describe how to set up the environment, e.g. pip/conda/docker commands, download datasets, etc...
+To obtain 
 
 ## Training
 
