@@ -8,7 +8,19 @@ There are two main requirements to run the code -- setting up the environment an
 
 To setup the necessary dependencies, please use anaconda to install the packages specified in environment file nn_mal.yml
 
-To obtain 
+To obtain the Sleipnir data set, please fill in the request as shown in https://github.com/ALFA-group/robust-adv-malware-detection . 
+
+Once the data set access is obtained, please unzip the data set under folder under ./help_files/data/.
+So for example, the feature vector of a malware named mal.exe should have path ./help_files/data/sleipnir-dataset/malicious/mal.exe
+
+## Running Experiment
+
+Step 1: Normalize Data
+For our unified approach, the data inputs need to be normalized. When the data set is properly unzipped, run
+```
+python data_normalization.py
+```
+to create the normalized vectors. The normalized vectors will be stored in malicious_normalized and benign_normalized folder under sleipnir-dataset. So for a malware named mal.exe, its normalized vector will be in file ./help_files/data/sleipnir-dataset/malicious_normalized/mal.exe
 
 ## Training
 
