@@ -41,47 +41,13 @@ The result files will be created under ./result_files/[i] for the corresponding 
    - [training:training-method|evasion:evading-method]_run_experiments-model.pt saves the final model obtained from training.
    - [training:training-method|evasion:evading-method]_run_experiments.loss stores the training/validation losses over epoches as evidence for convergence.
 
-## Training
+## Nomenclature of Attacks
 
-To train the model(s) in the paper, run this command:
+Last, we want to explain the naming of attacks in the experiment.
 
-```train
-python train.py --input-data <path_to_data> --alpha 10 --beta 20
-```
-
-> 📋Describe how to train the models, with example commands on how to train the models in your paper, including the full training procedure and appropriate hyperparameters.
-
-## Evaluation
-
-To evaluate my model on ImageNet, run:
-
-```eval
-python eval.py --model-file mymodel.pth --benchmark imagenet
-```
-
-> 📋Describe how to evaluate the trained models on benchmarks reported in the paper, give commands that produce the results (section below).
-
-## Pre-trained Models
-
-You can download pretrained models here:
-
-- [My awesome model](https://drive.google.com/mymodel.pth) trained on ImageNet using parameters x,y,z. 
-
-> 📋Give a link to where/how the pretrained models can be downloaded and how they were trained (if applicable).  Alternatively you can have an additional column in your results table with a link to the models.
-
-## Results
-
-Our model achieves the following performance on :
-
-### [Image Classification on ImageNet](https://paperswithcode.com/sota/image-classification-on-imagenet)
-
-| Model name         | Top 1 Accuracy  | Top 5 Accuracy |
-| ------------------ |---------------- | -------------- |
-| My awesome model   |     85%         |      95%       |
-
-> 📋Include a table of results from your paper, and link back to the leaderboard for clarity and context. If your main result is a figure, include that figure and link to the command or notebook to reproduce it. 
-
-
-## Contributing
-
-> 📋Pick a licence and describe how to contribute to your code repository. 
+   - greedy_grad_all-[n_iter]x[n_transformation_per_iter] is the GreedyByGrad attack that uses both additive and equivalent relations, e.g. greedy_grad_all-5x10 means using GreedyByGrad attack with 5 iterations and 10 transformations in each iteration.
+   - greedy_grad_sub-[n_iter]x[n_transformation_per_iter] is the GreedyByGrad attack that uses only equivalent relations.
+   - ggroup_add-[n_iter_sub]x[n_max_instances]x[n_iter_add] is the GreedyByGroup attack that uses both additive and equivalent relations, e.g. ggroup_add-20x10x50 means using equivalent relation for 20 iterations, each iteration checks at most 2^10 combinations in each equivalent group, and finally using additive relation attacks for 50 iterations.
+   - greedy_group[n_iter]x[n_max_instance] is the GreedyByGroup attack that only uses equivalent relation.
+   - rfgsm_k attack is the additive attack baseline used by Al-Dujaili et al. We set number of iterations k=50.
+   - normalization+adv_training is specific for normalized inputs. It uses rfgsm_k over normalized inputs.
