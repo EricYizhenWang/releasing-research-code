@@ -23,6 +23,19 @@ python data_normalization.py
 ```
 to create the normalized vectors. The normalized vectors will be stored in malicious_normalized and benign_normalized folder under sleipnir-dataset. So for a malware named mal.exe, its normalized vector will be in file ./help_files/data/sleipnir-dataset/malicious_normalized/mal.exe
 
+### Step 2: Run Experiment
+
+To run experiment, use the command with an integer argument i representing the index for the data split.
+```
+python run_experiments.py [i]
+```
+For example, python run_experiments.py 0 will run experiment over the 0-th data split.
+The data split information is stored under ./result_files/[i]. If the folder does not exist, the script will automatically generate a new train/test/validation data split and create the corresponding folder.
+
+The run_experiment.py script updates the parameters.ini file and call framework-lite.py script to run experiment using the specified parameters. The user can change the set of training methods and evasion methods used in the experiment. Notice that the experiments for normalized and un-normalized inputs are seperated. So please run the script twice by activating/commenting the corresponding codes as explained in the scripts.
+
+### Step 3: Read Results
+
 ## Training
 
 To train the model(s) in the paper, run this command:
