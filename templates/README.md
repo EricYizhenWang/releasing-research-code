@@ -15,7 +15,8 @@ So for example, the feature vector of a malware named mal.exe should have path .
 
 ## Running Experiment
 
-Step 1: Normalize Data
+### Step 1: Normalize Data
+
 For our unified approach, the data inputs need to be normalized. When the data set is properly unzipped, run
 ```
 python data_normalization.py
