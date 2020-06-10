@@ -45,6 +45,7 @@ The result files will be created under ./result_files/[i] for the corresponding 
 
 Last, we want to explain the naming of attacks in the experiment.
 
+   - natural means no attacks.
    - greedy_grad_all-[n_iter]x[n_transformation_per_iter] is the GreedyByGrad attack that uses both additive and equivalent relations, e.g. greedy_grad_all-5x10 means using GreedyByGrad attack with 5 iterations and 10 transformations in each iteration.
    - greedy_grad_sub-[n_iter]x[n_transformation_per_iter] is the GreedyByGrad attack that uses only equivalent relations.
    - ggroup_add-[n_iter_sub]x[n_max_instances]x[n_iter_add] is the GreedyByGroup attack that uses both additive and equivalent relations, e.g. ggroup_add-20x10x50 means using equivalent relation for 20 iterations, each iteration checks at most 2^10 combinations in each equivalent group, and finally using additive relation attacks for 50 iterations.
