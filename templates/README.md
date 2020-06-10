@@ -36,6 +36,9 @@ The run_experiment.py script updates the parameters.ini file and call framework-
 
 ### Step 3: Read Results
 
+The result files will be created under ./result_files/[i] for the corresponding i-th split as well. There are three main types of files:
+-- [training:training-method|evasion:evading-method]_run_experiments.json contains the experiment statistics including FNR and FPR with/without attack.
+
 ## Training
 
 To train the model(s) in the paper, run this command:
